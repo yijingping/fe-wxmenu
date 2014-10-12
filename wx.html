@@ -1,0 +1,89 @@
+<html><head>
+<meta charset="utf-8">
+<title>自由结伴</title>
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+</head>
+<body>
+
+<!-- 底部菜单 -->
+<style type="text/css">
+/*======================= 仿微信底部菜单 2014-09-19 ====================*/
+.blank50{ width:100%; height:40px; overflow:hidden;}
+.footnav-box{}
+.footnav{position:fixed;z-index:800;bottom:0;left:0;width:100%; background:#fafafa; border-top:1px solid #cdcdcd;  height:44px; padding-left:44px;  color:#4a4a4a; box-shadow:0 0 2px rgba(255,255,255,1) inset;box-sizing:border-box;}
+.left-hd{ position:absolute; left:0; top:0; width:44px; text-align:center;}
+.logo60{ display:inline-block; width:30px; height:30px; background:url(img/logo60.png) no-repeat; background-size:30px 30px; margin-top:7px;}
+.footnav-list{ width: 100%; display:table;-webkit-box-orient: horizontal;-moz-box-orient: horizontal;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;}
+.footnav-list li{ display:table-cell; width:33.333%; border-left:1px solid #cdcdcd; height:44px; position:relative;}
+.footnav-list li > a{display:block;font-size:14px;-webkit-box-sizing:border-box;box-sizing:border-box;line-height:44px;text-align:center; color:#4a4a4a;}
+.footnav-list li > a:only-child span{background:none;padding-left:0;}
+.footnav-list li > a.on + dl{display: block;}
+.footnav-list li > a span{color: #4a4a4a;display: inline-block;padding-left: 15px;background: url(img/more-icon.png) 2px 18px no-repeat;background-size: 10px 10px;}
+.footnav-list dl{display:none;position:absolute;z-index:820;bottom:58px;right:50%; margin-right:-42px;background:#fafafa;border-radius:5px; padding:0 10px; -webkit-box-shadow:0 0 1px rgba(0,0,0,0.5);-moz-box-shadow:0 0 1px rgba(0,0,0,0.5); box-shadow:0 0 1px rgba(0,0,0,0.5); }
+.footnav-list dl dd{line-height:40px;text-align:center; border-bottom:1px solid #cdcdcd;max-width:110px; box-sizing:border-box; padding:2px 0;}
+.footnav-list dl dd:last-of-type{ border:0 none;}
+.footnav-list dl dd a{font-size: 14px;display:block;color:#4a4a4a;white-space: nowrap;overflow: hidden;text-overflow: ellipsis; padding:0 5px;}
+.footnav-list dl dd a:hover,.footnav-list dl dd a:active{ background:#d2d2d2;border-radius:5px;}
+.footnav-list dl:before{content:"";display:inline-block;position:absolute;z-index:840;bottom:0;right:38px;width:10px;height:10px; background:url(img/icon-triangle.png) no-repeat; background-size:10px 10px;margin-bottom:-10px;}
+.footnav-list li:last-of-type dl{margin-right:-38px;}
+</style>
+<div class="footnav-box">
+    <nav>
+        <div class="footnav" id="footNav">
+            <div class="left-hd"><a href="http://m.6renyou.com/" target="_blank" class="logo60"></a></div>
+            <ul class="footnav-list">
+                <li> <a href="javascript:;" class=""><span>定制行程</span></a>
+                    <dl>
+                        <dd> <a href="http://m.6renyou.com/weixin_service/webAuth?state=1"><span>定制进度</span></a> </dd>
+                        <dd> <a href="http://m.6renyou.com/ordercext/index"><span>提交需求</span></a> </dd>
+                    </dl>
+                </li>
+                <li><a href="http://m.6renyou.com/index/freeList" class=""><span>自由结伴</span></a></li>
+                <li> <a href="javascript:;" class=""><span>会员中心</span></a>
+                    <dl>
+                        <dd><a href="http://m.6renyou.com"><span>官方网站</span></a></dd>
+                        <dd><a href="http://m.6renyou.com/weixin_shop/overseaBuying"><span>免费代购</span></a></dd>
+                        <dd><a href="http://m.6renyou.com/member/index"><span>我的会员卡</span></a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <script type="text/javascript">
+        var nav4 =(function(){
+        bindClick = function(els){
+        if(!els || !els.length){return;}
+        var isMobile = "ontouchstart" in window;
+        for(var i=0,ci; ci = els[i]; i++){
+            ci.addEventListener("click", evtFn, false);
+        }
+        function evtFn(evt, ci){
+            ci =this;
+            for(var j=0,cj; cj = els[j]; j++){
+                if(cj != ci){
+                    console.log(cj);
+                    cj.classList.remove("on");
+                }
+            }
+            
+            switch(evt.type){
+                case "click":
+                    var on = ci.classList.toggle("on");
+                break;
+            }
+        }
+    }
+    return {"bindClick":bindClick};
+})();
+    </script>
+    <script type="text/javascript">
+        nav4.bindClick(document.getElementById("footNav").querySelectorAll("li>a"));
+    </script>
+</div>
+<!-- 底部菜单 end -->
+
+</body></html>
